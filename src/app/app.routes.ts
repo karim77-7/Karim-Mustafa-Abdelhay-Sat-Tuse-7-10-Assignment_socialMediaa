@@ -31,7 +31,11 @@ export const routes: Routes = [
     canActivate: [authGuard],
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'post-details/:id', component: PostDetailsComponent },
+      {
+        path: 'post-details/:id',
+        component: PostDetailsComponent,
+        data: { renderMode: 'client' }
+      },
       { path: 'profile', component: ProfileComponent },
       { path: 'settings', component: SettingsComponent },
     ],
